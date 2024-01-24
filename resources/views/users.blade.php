@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ env("APP_NAME") . " - Home"}}</title>
+        <title>{{ env("APP_NAME") . " - Users"}}</title>
 
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 
@@ -41,7 +41,14 @@
             </div>
         </nav>
         <main class="mx-36 my-12">
-            <h1 class="text-3xl">Home Page</h1>
+            <h1 class="text-3xl">Users Page</h1>
+            <ul>
+                @foreach ($users as $user)
+                <li><a href="{{ route("showUser", ["id" => $user->id]) }}">{{ $user->name }}</a></li>
+                @endforeach
+            </ul>
+
+
         </main>
     </body>
 </html>
