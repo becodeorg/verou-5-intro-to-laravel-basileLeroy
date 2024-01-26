@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::all();
         
-        return view("users", [
+        return view("users.index", [
             "users" => $users,
         ]);   
     }
@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         
-        return view ("user", [
+        return view ("users.show", [
             "user" => $user,
         ]);
     }
